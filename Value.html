@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loomian Legacy Values</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        .rounded-box {
+            background-color: #f0f0f0;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 50%;
+        }
+
+        .value {
+            background-color: gray; 
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 50%;
+        }
+
+        select {
+            margin-bottom: 10px;
+        }
+
+        div {
+            background-color: #f0f0f0;
+        }
+
+    </style>
+
+    <script src="script.js"></script>
+</head>
+<body>
+<div align="center" class="rounded-box">
+    <h1>LOOMIAN LEGACY VALUES</h1>
+</div>
+<br><br>
+<div align="center" class="rounded-box">
+    <form method="post" action="Value.html">
+
+        <h2>SELECT LOOMIAN</h2>
+        <br><br>
+
+        <label for="Gleaming">Select Gleaming Type</label>
+        <select id="gleamOptions" name="gleam" onchange="showOptions()">
+            <option disabled selected style="color: gray;">None</option>
+            <option value="alpha">Alpha Gleaming</option>
+            <option value="gamma">Gamma Gleaming</option>
+        </select>   
+
+        <br>
+
+        <!--Select either alpha or gamma-->
+
+        <div id="alpha" style="display: none;">
+            <label>Select Loomian Type (Alpha Gleaming)</label>
+            <select id="alphaOptions" name="type" onchange="showOptions()">
+                <option disabled selected style="color: gray;">None</option>
+                <option value="boonary">Other Encounter</option>
+                <option value="pyramind">Mastery Encounter</option>
+                <option value="groaming">Roaming</option>
+                <option value="geroaming">Roaming Event</option>
+                <option value="gevent">Event</option>
+                <option value="ggreskin">Reskin</option>
+            </select>
+        </div>
+
+        <div id="gamma" style="display: none;">
+            <label>Select Loomian Type (Gamma Gleaming)</label>
+            <select id="gammaOptions" name="type" onchange="showOptions()">
+                <option disabled selected style="color: gray;">None</option>
+                <option value="rr">Route Rares</option>
+                <option value="others">Other Encounter</option>
+                <option value="weather">Weather</option>
+                <option value="fishing">Fishing</option>
+                <option value="mastery">Mastery</option>
+                <option value="ggroaming">Roaming</option>
+                <option value="ggeroaming">Roaming Event</option>
+                <option value="ggevent">Event</option>
+                <option value="ggreskin">Reskin</option>
+            </select>
+        </div>
+
+        <!--Gleaming Alpha Loomian Type-->
+
+        <!--Boonary-->
+        <div id="boonary" style="display: none;">
+        <label>Other Encounter Loomian</label>
+        <select id="gboonary" name="type" onchange="showOptions()">
+        <option disabled selected style="color: gray;">None</option>
+        <option value="boon">Boonary</option>
+        </select>
+        </div>
+
+        <div id="gboonText" style="display:none;" class="value">
+            <p>
+            <b>Demand: </b>Decent <br>
+            <b>Ineffective Personalities: </b> (Smart/Brawny/Nimble/Robust/Clever) <br>
+            <br>
+                Dull = 0.2 GR<br>
+                All personalities = 0.3 GR<br>
+                Hyper (Clumsy/Frail/Sluggish/Tender/Foolish) = 0.4 GR <b>Good Demand</b>
+            </p>
+            
+        </div>
+
+        <!--Pyramind-->
+        <div id="pyramind" style="display:none;">
+            <label>Mastery Encounter Loomian</label>
+            <select id="gpyra" name="type" onchange="showOptions()">
+                <option disabled selected style="color: gray;">None</option>
+                <option value="pyra">Pyramind</option>
+            </select>
+        </div>
+
+        <div id="gpyraText" style="display:none;" class="value">
+            <p>
+            <b>Demand: </b>Bad <br>
+            <b>IDIOSYNCRATIC</b> <br>
+            <b>Ineffective Personalities: </b> (Smart/Hyper) <br>
+            <br>
+            Sluggish/Frail (Robust/Clever) = 0.5 GR <br>
+            Tender/Foolish = 0.6 GR <br>
+            Brawny Sluggish = 0.6 GR <br>
+            Frail Nimble = 0.6 GR <br>
+            Dull = 0.65 GR <br>
+            Tender Clever = 0.65 GR<br>
+            Indifferent/Clumsy/Dull Robust/Dull Clever = 0.7 GR <br>
+            Clever (Clumsy) = 0.75 GR <br>
+            Robust (Clumsy) = 0.8 GR <br>
+            Brawny/Nimble (Tender/Foolish) = 0.8 GR<br>
+            Nimble/Brawny (Dull) = 0.8 GR <br>
+            Brawny (Clumsy) = 0.9 GR<br>
+            Nimble (Clumsy) = 1 GR<br>
+        </p>        
+        </div>
+
+
+        <!--Gleaming Gamma Loomian Type-->
+
+        <div id="rr" style="display: none;">
+            <label>Route Rare Loomian</label>
+            <select>
+                <option disabled selected style="color: gray;">None</option>
+                <option value="Pyder">Pyder</option>
+                <option value="Antsee">Antsee<b>(NOT FLORANT)</b></option>
+                <option value="Kanki">Kanki</option>
+                <option value="Swimp">Garlash</option>
+                <option value="Pwuff">Pwuff</option>
+                <option value="Bloatox">Bloatox</option>
+                <option value="Gumpod">Gumpod</option>
+                <option value="Whimpor">Whimpor</option>
+                <option value="Taoshi">Taoshi</option>
+                <option value="Poochrol">Poochrol</option>
+                <option value="Gobbidemic ">Gobbidemic </option>
+                <option value="sandwich">Sandwhich Snagull</option>
+                <option value="Wiledile">Wiledile</option>
+                <option value="Makame">Makame</option>
+                <option value="Igneol">Igneol</option>
+                <option value="Operator">Operator</option>
+                <option value="Sharpod ">Sharpod </option>
+            </select>
+        </div>
+    </form>
+</div>
+</body>
+</html>
